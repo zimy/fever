@@ -1,0 +1,14 @@
+fever:
+  image: zimy/fever
+  links:
+    - queue
+  ports:
+    - "80:8080"
+    - "22:2000"
+queue:
+  build: ./rabbit/.
+  ports:
+    - "1883:1883"
+    - "5672:5672"
+    - "15672:15672"
+
