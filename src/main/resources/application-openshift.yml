@@ -1,0 +1,28 @@
+spring:
+  profiles: openshift
+  application:
+    name: WeTrackPro - Thermo
+  jpa:
+    hibernate.ddl-auto: validate
+  resources.cache-period: 3600
+  http.encoding.charset: UTF-8
+  mvc.favicon.enabled: false
+  datasource:
+    url: jdbc:postgresql://${OPENSHIFT_POSTGRESQL_DB_HOST}:${OPENSHIFT_POSTGRESQL_DB_PORT}/questionnaire
+    username: ${OPENSHIFT_POSTGRESQL_DB_USERNAME}
+    password: ${OPENSHIFT_POSTGRESQL_DB_PASSWORD}
+    driverClassName: org.postgresql.Driver
+server:
+  address: ${OPENSHIFT_DIY_IP}
+  port: ${OPENSHIFT_DIY_PORT}
+  tomcat:
+    remote_ip_header: x-forwarded-for
+    protocol_header: x-forwarded-proto
+logging:
+  path: ${OPENSHIFT_DATA_DIR}/logs/
+management.context-path: /management
+liquibase:
+  change-log: classpath:/db/changelog/db.changelog-master.yaml
+  check-change-log-location: false
+  enabled: true
+endpoints.shutdown.enabled: true
