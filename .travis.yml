@@ -1,0 +1,18 @@
+language: java
+sudo: false
+jdk:
+- oraclejdk8
+before_install:
+- if [ ! -d gradle/gradle-2.6 ] ; then mkdir gradle; pushd gradle; wget http://services.gradle.org/distributions/gradle-2.6-bin.zip;
+  unzip gradle-2.6-bin.zip; rm -f gradle-2.6-bin.zip; popd; fi; export GRADLE_USER_HOME=gradle
+  ; export GRADLE_HOME=gradle/gradle-2.5 ; export PATH=$GRADLE_HOME/bin:$PATH
+deploy:
+  provider: openshift
+  user: diyakovlev@edu.hse.ru
+  password:
+    secure: jNmmZiwkp+kgs+zlaqJRVG2oZvuLC2thD3UgQOR3oVDXOvd6nLV5NmPoJ1Yi37DJEtJfZtrsEjqkZ6e8BBFnMgcIEy7DaY03D4vSeSOW1W2nYPM23/jQ4Dnbx3qUjZ3pLAB2YoXEa+ICrTn3xi4NG3/bzht08eHxKkcDbjl0KsIi8TGUleVlkOQ6GZ3munancWkNVZ7k7sORWEQUg8umRtTGThoHI2QXy80Ew1etWC7TnY5+g5eoa4bz27pPcUrxLabMSP4avGDg4bxVOp4pE5/Nf4ZBYu7+FISOFM05SSCDOSIXJRU7unQXPPL2CtWT++OBxNv4VbsUoKcWhYAKiQbv/czBU92xY2U6BGrM/YITqLYeB1xuWg6CoSTxR6yxEQk+vFgHe70ZA7Rf2pJRKKfNBiHPCZIeAiJahmrW+qcs7elyJvH2jCKQjE1quCytrzJiEfDOji0xTrBZhZJV5BAv2zg8SMsWaMJ0hqacXIJR++kfix2SmTdsWU5AAsiDkAO/Q4ykt+mu45/JqNrUXGIkJ0o1GeWvK/VYNcLbxz7IbBUPvI0BPR0NEca96RVOExkt/2kep/y/lz+kr04fIINg0YM6qDC3Trs/4hLiXRNWKNQjJDf5x1+SWAxibMtbJw2FHh4Q0ZjsFDtxGQ9so9PM9DgYy0XbfgGD+uhdv+s=
+  app: feverd
+  domain: whole
+  on:
+    repo: zimy/fever
+    branch: develop 
