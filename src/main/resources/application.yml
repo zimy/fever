@@ -3,6 +3,7 @@ spring:
     name: WeTrackPro - Thermo
   datasource:
     url: jdbc:hsqldb:file:/tmp/wetrackpro/parker
+#    driver-class-name: org.hsqldb.jdbc.JDBCDriver
   jpa:
     hibernate.ddl-auto: validate
     show-sql: true
