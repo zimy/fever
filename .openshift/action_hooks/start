@@ -1,5 +1,5 @@
 #!/bin/bash
 cd $OPENSHIFT_REPO_DIR
-export JAVA_HOME="OPENSHIFT_DATA_DIR/jdk1.8.0_05"
+export JAVA_HOME="$OPENSHIFT_DATA_DIR/jdk1.8.0_05"
 export PATH="$JAVA_HOME/bin:$PATH"
 nohup java -Xms500m -Xmx500m -jar build/libs/*.jar --spring.config.location=$OPENSHIFT_DATA_DIR  --spring.profiles.active=openshift &
