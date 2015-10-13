@@ -3,9 +3,9 @@ sudo: false
 jdk:
 - oraclejdk8
 before_install:
-- if [ ! -d gradle/gradle-2.6 ] ; then mkdir gradle; pushd gradle; wget http://services.gradle.org/distributions/gradle-2.6-bin.zip;
-  unzip gradle-2.6-bin.zip; rm -f gradle-2.6-bin.zip; popd; fi; export GRADLE_USER_HOME=gradle
-  ; export GRADLE_HOME=gradle/gradle-2.5 ; export PATH=$GRADLE_HOME/bin:$PATH
+        - if [ ! -d gradle-cache/gradle-2.6 ] ; then mkdir gradle-cache; pushd gradle-cache; wget http://services.gradle.org/distributions/gradle-2.6-bin.zip;
+          unzip gradle-2.6-bin.zip; popd; fi; export GRADLE_USER_HOME=gradle-cache
+          ; export GRADLE_HOME=gradle-cache/gradle-2.6 ; export PATH=$GRADLE_HOME/bin:$PATH
 deploy:
   provider: openshift
   user: diyakovlev@edu.hse.ru
