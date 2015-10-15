@@ -5,7 +5,7 @@
     <meta charset="UTF-8"/>
     <title>График температуры</title>
     <link th:attr="href=@{/common.css}" href="../static/common.css" type="text/css" rel="stylesheet"/>
-<!--/*    <link th:attr="src=@{webjars/katex/0.3.0/katex.min.css}"
+    <link th:attr="src=@{webjars/katex/0.3.0/katex.min.css}"
             rel="stylesheet" href="htts://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css" type="text/css">
     <script th:attr="src=@{webjars/jquery/2.1.1/jquery.min.js}"
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
@@ -14,7 +14,7 @@
     <script th:attr="src=@{webjars/katex/0.3.0/katex.min.js}"
             src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
     <script th:attr="src=@{webjars/katex/0.3.0/contrib/auto-render.min.js}"
-src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js"></script> */-->
+            src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -34,7 +34,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.
         </tbody>
     </table>
     <p>Здесь можно прикола ради записать какую-нибудь формулу:
-    <div id="formula"></div>
+        <div id="formula"></div>
+    </p>
     <div id="graph" style="width:100%;height:600px"></div>
     <script th:inline="javascript" type="text/javascript">
         // <![CDATA[
