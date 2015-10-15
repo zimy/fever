@@ -45,9 +45,9 @@ dependencies {
 //    compile 'com.sun.mail:javax.mail:1.5.4'
 
 
-    runtime 'org.webjars:jquery:2.1.1'
-    runtime 'org.webjars:flot:0.8.3'
-//    runtime "org.webjars.bower:katex-build:0.3.0"
+    runtime "org.webjars:jquery:2.1.1"
+    runtime "org.webjars:flot:0.8.3"
+    runtime "org.webjars.bower:katex-build:0.3.0"
 //    runtime "org.webjars:webpack:1.5.3"
 //    runtime 'org.webjars:ace:01.08.2014'
 //    runtime 'org.webjars:bootstrap:4.0.0-alpha'

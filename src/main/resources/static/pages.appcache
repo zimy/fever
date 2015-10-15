@@ -3,6 +3,8 @@ CACHE MANIFEST
 common.css
 webjars/jquery/2.1.1/jquery.min.js
 webjars/flot/0.8.3/jquery.flot.min.js
-
+webjars/katex/0.3.0/katex.min.js
+webjars/katex/0.3.0/katex.min.css
+webjars/katex/0.3.0/contrib/auto-render.min.js
 NETWORK:
 *
