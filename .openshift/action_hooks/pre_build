@@ -4,9 +4,10 @@ cd $OPENSHIFT_DATA_DIR
 if [ ! -d gradle-2.6 ]
 then
     mkdir gradle
-    cd gradle
+    pushd gradle
     curl -L  http://services.gradle.org/distributions/gradle-2.6-bin.zip | python -c "import zipfile,sys,StringIO;zipfile.ZipFile(StringIO.StringIO(sys.stdin.read())).extractall('.')"
-    cd ..
+    popd
+    chmod +x gradle/gradle-2.6/bin/gradle
 fi
 if [ ! -d jdk1.8.0_05 ]
 then
