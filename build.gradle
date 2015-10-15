@@ -58,7 +58,7 @@ dependencies {
 
     runtime "org.liquibase:liquibase-core"
     runtime "org.hsqldb:hsqldb"
-//    runtime "org.postgresql:postgresql:9.4-1201-jdbc41"
+    runtime "org.postgresql:postgresql:9.4-1201-jdbc41"
 
 //    testCompile 'junit:junit'
 //    testCompile 'org.mockito:mockito-core'
