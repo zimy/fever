@@ -9,7 +9,7 @@ spring:
   jackson.serialization:
     ORDER_MAP_ENTRIES_BY_KEYS: true
     INDENT_OUTPUT: true
-  resources.cache-period: 86400
+  resources.cache-period: 1200
   http.encoding.charset: UTF-8
   thymeleaf.cache: false
   mvc.favicon.enabled: false

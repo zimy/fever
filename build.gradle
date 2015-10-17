@@ -56,7 +56,7 @@ dependencies {
 //    runtime 'org.webjars:extjs:6.0.0'
 //    runtime 'org.webjars:metroui:2.0.23'
 
-    runtime "org.liquibase:liquibase-core"
+//    runtime "org.liquibase:liquibase-core"
     runtime "org.hsqldb:hsqldb"
     runtime "org.postgresql:postgresql:9.4-1201-jdbc41"
 
