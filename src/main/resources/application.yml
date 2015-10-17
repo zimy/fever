@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:hsqldb:file:/tmp/wetrackpro/parker
   jpa:
-    hibernate.ddl-auto: validate
+    hibernate.ddl-auto: update
     show-sql: true
   jackson.serialization:
     ORDER_MAP_ENTRIES_BY_KEYS: true

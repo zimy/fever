@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: WeTrackPro - Thermo
+  datasource:
+    url: jdbc:hsqldb:file:/tmp/wetrackpro/parker
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: false
+  jackson.serialization:
+    ORDER_MAP_ENTRIES_BY_KEYS: false
+    INDENT_OUTPUT: false
+  resources.cache-period: 86400
+  http.encoding.charset: UTF-8
+  thymeleaf.cache: true
+  mvc.favicon.enabled: false
+management.context-path: /management
+logging:
+  path: /tmp/wetrackpro/
+liquibase:
+  change-log: classpath:/db/changelog/db.changelog-master.yaml
+  check-change-log-location: false
+  enabled: false
+endpoints.shutdown.enabled: true
