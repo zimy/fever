@@ -23,6 +23,7 @@ h1, p {
 
 table {
     width: 100%;
+    display: none;
     border-collapse: collapse;
 }
 
