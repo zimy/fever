@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestPart;
  */
 @Controller
 public class VisitorController {
-    @RequestMapping("/finish")
-    public void visitor(){
+    @RequestMapping("/stop/{distance}")
+    public void visitorLeave(@RequestPart Integer distance){
 
     }
 
     @RequestMapping("/start/{distance}")
-    public void visitor(@RequestPart Integer distance){
+    public void visitorCome(@RequestPart Integer distance){
 
     }
 }

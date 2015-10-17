@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 
 /**
  * Created by Dmitriy I. Yakovlev $lt;zimy&at;yandex$dot;ru&gt; on 07.10.15.
+ * JPA to extract and store thermoEvents
  */
 @Repository
 @Cacheable

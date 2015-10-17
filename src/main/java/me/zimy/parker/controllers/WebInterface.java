@@ -23,6 +23,7 @@ import java.util.Random;
 public class WebInterface {
     @Autowired
     Thermos thermos;
+
     @RequestMapping("/")
     public String getProbabilityResults(
             @RequestParam(defaultValue = "false", required = false) Boolean cache,
@@ -30,13 +31,15 @@ public class WebInterface {
             Model model) {
         List<ThermoEvent> all = thermos.findAll();
         model.addAttribute("secondResult", all);
-        model.addAttribute("lastValue", all.get(all.size() - 1));
+        if (all.size() != 0) {
+            model.addAttribute("lastValue", all.get(all.size() - 1));
+        }
         model.addAttribute("cacheable", false);
         return "answers";
     }
 
-    @RequestMapping("/persistent")
-    public String getMockedAndCached(Model model){
+    @RequestMapping("/value")
+    public String getMockedAndCached(Model model) {
         Random random = new Random();
         List<Integer> parts = new ArrayList<>();
         for (int i = 0; i < 13; i++) {
