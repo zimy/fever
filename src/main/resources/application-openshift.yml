@@ -3,7 +3,7 @@ spring:
   application:
     name: WeTrackPro - Thermo
   jpa:
-    hibernate.ddl-auto: validate
+    hibernate.ddl-auto: update
   resources.cache-period: 3600
   http.encoding.charset: UTF-8
   mvc.favicon.enabled: false

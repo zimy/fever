@@ -25,13 +25,8 @@ public class ThermoController {
         thermos.save(thermoEvent);
     }
 
-    @RequestMapping("/all")
+    @RequestMapping("/thermos")
     public Collection<ThermoEvent> getAll() {
         return thermos.findAll();
-    }
-
-    @RequestMapping("/one")
-    public ThermoEvent getOne(@RequestParam LocalDateTime id) {
-        return thermos.findByTimestamp(id);
     }
 }
