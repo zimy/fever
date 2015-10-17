@@ -14,10 +14,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * Entry point
  */
 @EntityScan
-@EnableAsync
 @Configuration
 @ComponentScan
-@EnableScheduling
 @EnableAutoConfiguration
 public class Thermo {
     public static void main(String[] args) {

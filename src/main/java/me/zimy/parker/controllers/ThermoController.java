@@ -15,24 +15,23 @@ import java.util.Collection;
  * Controller for posting sensor information
  */
 @Controller
-@RequestMapping("/thermo")
 public class ThermoController {
     @Autowired
     Thermos thermos;
 
-    @RequestMapping()
-    public String postThermo(@RequestParam float value, @RequestParam int room, @RequestParam int bed){
-        ThermoEvent thermoEvent = new ThermoEvent(value, LocalDateTime.now());
+    @RequestMapping("/dweet/for/wetrackfever")
+    public void postThermo(@RequestParam Double temperature) {
+        ThermoEvent thermoEvent = new ThermoEvent(temperature, LocalDateTime.now());
         thermos.save(thermoEvent);
-        return "200";
     }
+
     @RequestMapping("/all")
-    public Collection<ThermoEvent> getAll(){
+    public Collection<ThermoEvent> getAll() {
         return thermos.findAll();
     }
+
     @RequestMapping("/one")
-    public ThermoEvent getOne(@RequestParam LocalDateTime id)
-    {
+    public ThermoEvent getOne(@RequestParam LocalDateTime id) {
         return thermos.findByTimestamp(id);
     }
 }
