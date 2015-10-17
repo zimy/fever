@@ -1,6 +1,8 @@
 package me.zimy.parker.controllers;
 
+import me.zimy.parker.model.Ticket;
 import me.zimy.parker.model.VisitorEvent;
+import me.zimy.parker.repositories.Tickets;
 import me.zimy.parker.repositories.Visitors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,20 @@ public class VisitorController {
     @Autowired
     Visitors visitors;
 
+    @Autowired
+    Tickets tickets;
+
+    @RequestMapping("/ticket/{ticketId}")
+    public void saveTicket(@RequestPart Integer tickedId)
+    {
+        tickets.save(new Ticket(tickedId));
+    }
+
+    @RequestMapping("/tickets")
+    @ResponseBody
+    public List<Ticket> ticket(){
+        return tickets.findAll();
+    }
 
     @RequestMapping("/stop/{distance}")
     public void visitorLeave(@RequestPart Integer distance) {
