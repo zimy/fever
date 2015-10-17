@@ -16,7 +16,7 @@ body {
     border-radius: 10px;
 }
 
-p {
+h1, p {
     display: block;
     margin-bottom: 0.5em;
 }

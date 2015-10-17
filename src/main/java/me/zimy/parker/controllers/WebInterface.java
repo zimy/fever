@@ -25,7 +25,7 @@ public class WebInterface {
         Random random = new Random();
         List<Integer> parts = new ArrayList<>();
         for (int i = 0; i < 13; i++) {
-            parts.add(random.nextInt(8)+32);
+            parts.add(random.nextInt(18)+20);
         }
         model.addAttribute("secondResult", parts);
         return "answers";
