@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      th:attr="manifest=''"
+      th:attr="manifest=${cacheable}?'pages.appcache':''"
       xsi:schemaLocation="http://www.thymeleaf.org " manifest="pages.appcache">
 <head lang="en">
     <meta charset="UTF-8"/>
