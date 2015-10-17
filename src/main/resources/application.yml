@@ -19,7 +19,7 @@ logging:
 liquibase:
   change-log: classpath:/db/changelog/db.changelog-master.yaml
   check-change-log-location: false
-  enabled: true
+  enabled: false
 endpoints.shutdown.enabled: true
 
 #security.user.name: user # login username
