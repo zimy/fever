@@ -58,6 +58,7 @@ dependencies {
 
 //    runtime "org.liquibase:liquibase-core"
     runtime "org.hsqldb:hsqldb"
+    runtime "mysql:mysql-connector-java:5.1.6"
     runtime "org.postgresql:postgresql:9.4-1201-jdbc41"
 
 //    testCompile 'junit:junit'
