@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      th:attr="manifest=${cacheable}?'pages.appcache':''"
+      xsi:schemaLocation="http://www.thymeleaf.org " manifest="pages.appcache">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>TherMom</title>
+    <link th:attr="href=@{/common.css}" href="../static/common.css" type="text/css" rel="stylesheet"/>
+    <script th:attr="src=@{webjars/jquery/2.1.1/jquery.min.js}"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script th:attr="src=@{webjars/flot/0.8.3/jquery.flot.min.js}"
+            src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <h1>Спасибо за ваш интерес!</h1>
+    <p>Больше нам предложить нечего, поэтому предлагаем вам ещё и <a href="http://avos.me">надёжный антивирус</a></p>
+</div>
+</body>
+</html>

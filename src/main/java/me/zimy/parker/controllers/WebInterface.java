@@ -24,7 +24,7 @@ public class WebInterface {
     @Autowired
     Thermos thermos;
 
-    @RequestMapping("/")
+    @RequestMapping("/data")
     public String getProbabilityResults(
             @RequestParam(defaultValue = "false", required = false) Boolean cache,
             @RequestParam(defaultValue = "false", required = false) Boolean mock,
@@ -49,5 +49,18 @@ public class WebInterface {
         model.addAttribute("lastValue", parts.get(parts.size() - 1));
         model.addAttribute("cacheable", true);
         return "answers";
+    }
+
+    @RequestMapping("/")
+    public String getLanding(Model model) {
+        Random random = new Random();
+        List<Integer> parts = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            parts.add(random.nextInt(18) + 20);
+        }
+        model.addAttribute("secondResult", parts);
+        model.addAttribute("lastValue", parts.get(parts.size() - 1));
+        model.addAttribute("cacheable", false);
+        return "landing";
     }
 }
