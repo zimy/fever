@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -15,24 +16,20 @@ import java.util.Collection;
  * Controller for posting sensor information
  */
 @Controller
-@RequestMapping("/thermo")
 public class ThermoController {
     @Autowired
     Thermos thermos;
 
-    @RequestMapping()
-    public String postThermo(@RequestParam float value, @RequestParam int room, @RequestParam int bed){
-        ThermoEvent thermoEvent = new ThermoEvent(value, LocalDateTime.now());
+    @RequestMapping("/dweet/for/wetrackfever")
+    @ResponseBody
+    public void postThermo(@RequestParam Double temperature) {
+        ThermoEvent thermoEvent = new ThermoEvent(temperature, LocalDateTime.now());
         thermos.save(thermoEvent);
-        return "200";
     }
-    @RequestMapping("/all")
-    public Collection<ThermoEvent> getAll(){
+
+    @RequestMapping("/thermos")
+    @ResponseBody
+    public Collection<ThermoEvent> getAll() {
         return thermos.findAll();
-    }
-    @RequestMapping("/one")
-    public ThermoEvent getOne(@RequestParam LocalDateTime id)
-    {
-        return thermos.findByTimestamp(id);
     }
 }

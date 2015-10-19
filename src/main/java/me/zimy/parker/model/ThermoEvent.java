@@ -5,13 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Dmitriy I. Yakovlev $lt;zimy&at;yandex$dot;ru&gt; on 27.09.15.
  * Information about temperature
  */
+@SuppressWarnings("unused")
 @Entity
 public class ThermoEvent {
     @Id
@@ -19,6 +18,9 @@ public class ThermoEvent {
     long id;
     double temperature;
     LocalDateTime timestamp;
+
+    public ThermoEvent() {
+    }
 
     public ThermoEvent(double temperature, LocalDateTime timestamp) {
         this.temperature = temperature;
