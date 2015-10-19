@@ -30,20 +30,26 @@ public class VisitorController {
 
     @RequestMapping("/ticket/{ticketId}")
     @ResponseBody
-    public void saveTicket(@PathVariable("ticketId") Integer tickedId)
-    {
+    public void saveTicket(@PathVariable("ticketId") Integer tickedId) {
         tickets.save(new Ticket(tickedId));
     }
 
     @RequestMapping("/tickets")
     @ResponseBody
-    public List<Ticket> ticket(){
+    public List<Ticket> ticket() {
         return tickets.findAll();
     }
 
+    @RequestMapping("/users")
+    @ResponseBody
+    public List<User> userz(){
+        return users.findAll();
+    }
+
     @RequestMapping(value = "/land", method = RequestMethod.POST)
-    public void land(@RequestParam String mail, @RequestParam(required = false) Integer ticketId){
+    public String land(@RequestParam String mail, @RequestParam(required = false) Integer ticketId) {
         users.save(new User(mail, ticketId));
+        return "thanks";
     }
 
     @RequestMapping("/stop/{distance}")
