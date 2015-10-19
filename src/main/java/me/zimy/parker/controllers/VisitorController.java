@@ -6,6 +6,7 @@ import me.zimy.parker.repositories.Tickets;
 import me.zimy.parker.repositories.Visitors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,7 +27,8 @@ public class VisitorController {
     Tickets tickets;
 
     @RequestMapping("/ticket/{ticketId}")
-    public void saveTicket(@RequestPart Integer tickedId)
+    @ResponseBody
+    public void saveTicket(@PathVariable("ticketId") Integer tickedId)
     {
         tickets.save(new Ticket(tickedId));
     }
@@ -38,13 +40,15 @@ public class VisitorController {
     }
 
     @RequestMapping("/stop/{distance}")
-    public void visitorLeave(@RequestPart Integer distance) {
+    @ResponseBody
+    public void visitorLeave(@PathVariable Integer distance) {
         visitors.save(new VisitorEvent(false, LocalDateTime.now(), distance));
     }
 
     @RequestMapping("/start/{distance}")
-    public void visitorCome(@RequestPart Integer distance) {
-        visitors.save(new VisitorEvent(false, LocalDateTime.now(), distance));
+    @ResponseBody
+    public void visitorCome(@PathVariable Integer distance) {
+        visitors.save(new VisitorEvent(true, LocalDateTime.now(), distance));
     }
 
     @RequestMapping("/visitors")
