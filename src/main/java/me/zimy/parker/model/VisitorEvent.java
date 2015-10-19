@@ -19,6 +19,9 @@ public class VisitorEvent {
     LocalDateTime time;
     Integer distance;
 
+    public VisitorEvent() {
+    }
+
     public VisitorEvent(Boolean start, LocalDateTime time, Integer distance) {
         this.start = start;
         this.time = time;

@@ -19,6 +19,9 @@ public class ThermoEvent {
     double temperature;
     LocalDateTime timestamp;
 
+    public ThermoEvent() {
+    }
+
     public ThermoEvent(double temperature, LocalDateTime timestamp) {
         this.temperature = temperature;
         this.timestamp = timestamp;

@@ -16,6 +16,9 @@ public class Ticket {
     Long id;
     Integer value;
 
+    public Ticket() {
+    }
+
     public Ticket(Integer value) {
         this.value = value;
     }
