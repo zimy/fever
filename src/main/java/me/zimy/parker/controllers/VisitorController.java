@@ -48,7 +48,7 @@ public class VisitorController {
     @RequestMapping("/start/{distance}")
     @ResponseBody
     public void visitorCome(@PathVariable Integer distance) {
-        visitors.save(new VisitorEvent(false, LocalDateTime.now(), distance));
+        visitors.save(new VisitorEvent(true, LocalDateTime.now(), distance));
     }
 
     @RequestMapping("/visitors")
