@@ -21,6 +21,7 @@ public class ThermoController {
     Thermos thermos;
 
     @RequestMapping("/dweet/for/wetrackfever")
+    @ResponseBody
     public void postThermo(@RequestParam Double temperature) {
         ThermoEvent thermoEvent = new ThermoEvent(temperature, LocalDateTime.now());
         thermos.save(thermoEvent);

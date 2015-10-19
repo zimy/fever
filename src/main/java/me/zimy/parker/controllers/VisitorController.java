@@ -26,6 +26,7 @@ public class VisitorController {
     Tickets tickets;
 
     @RequestMapping("/ticket/{ticketId}")
+    @ResponseBody
     public void saveTicket(@RequestPart Integer tickedId)
     {
         tickets.save(new Ticket(tickedId));
@@ -38,11 +39,13 @@ public class VisitorController {
     }
 
     @RequestMapping("/stop/{distance}")
+    @ResponseBody
     public void visitorLeave(@RequestPart Integer distance) {
         visitors.save(new VisitorEvent(false, LocalDateTime.now(), distance));
     }
 
     @RequestMapping("/start/{distance}")
+    @ResponseBody
     public void visitorCome(@RequestPart Integer distance) {
         visitors.save(new VisitorEvent(false, LocalDateTime.now(), distance));
     }
