@@ -1,15 +1,14 @@
 package me.zimy.parker.controllers;
 
 import me.zimy.parker.model.Ticket;
+import me.zimy.parker.model.User;
 import me.zimy.parker.model.VisitorEvent;
 import me.zimy.parker.repositories.Tickets;
+import me.zimy.parker.repositories.Users;
 import me.zimy.parker.repositories.Visitors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,6 +25,9 @@ public class VisitorController {
     @Autowired
     Tickets tickets;
 
+    @Autowired
+    Users users;
+
     @RequestMapping("/ticket/{ticketId}")
     @ResponseBody
     public void saveTicket(@PathVariable("ticketId") Integer tickedId)
@@ -37,6 +39,11 @@ public class VisitorController {
     @ResponseBody
     public List<Ticket> ticket(){
         return tickets.findAll();
+    }
+
+    @RequestMapping(value = "/land", method = RequestMethod.POST)
+    public void land(@RequestParam String mail, @RequestParam(required = false) Integer ticketId){
+        users.save(new User(mail, ticketId));
     }
 
     @RequestMapping("/stop/{distance}")
