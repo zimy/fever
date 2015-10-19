@@ -7,7 +7,7 @@ import javax.persistence.*;
  * Something which stores user emails
  */
 @Entity
-@Table(name="'User'")
+@Table(name="\"User\"")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
