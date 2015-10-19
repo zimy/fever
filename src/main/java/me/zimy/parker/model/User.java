@@ -1,15 +1,13 @@
 package me.zimy.parker.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Dmitriy I. Yakovlev $lt;zimy&at;yandex$dot;ru&gt; on 19.10.15.
  * Something which stores user emails
  */
 @Entity
+@Table(name="'User'")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
