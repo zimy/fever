@@ -28,7 +28,7 @@ public class VisitorController {
 
     @RequestMapping("/ticket/{ticketId}")
     @ResponseBody
-    public void saveTicket(@PathVariable Integer tickedId)
+    public void saveTicket(@PathVariable("ticketId") Integer tickedId)
     {
         tickets.save(new Ticket(tickedId));
     }
