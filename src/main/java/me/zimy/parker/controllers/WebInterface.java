@@ -61,6 +61,6 @@ public class WebInterface {
         model.addAttribute("secondResult", parts);
         model.addAttribute("lastValue", parts.get(parts.size() - 1));
         model.addAttribute("cacheable", false);
-        return "landing";
+        return "suenot";
     }
 }
