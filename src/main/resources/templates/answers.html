@@ -19,7 +19,8 @@
 </head>
 <body>
 <div class="wrap">
-    <h1 th:if="${lastValue != null}">Температура вашей ладони: <span th:text="${lastValue}"></span></h1>
+    <h1 th:if="${lastValue != null and cacheable == true}">Температура вашей ладони: <span th:text="${lastValue}"></span></h1>
+    <h1 th:if="${lastValue != null and cacheable == false}">Температура вашей ладони: <span th:text="${lastValue.temperature}"></span></h1>
     <h1 th:if="${lastValue == null}">Данные отсутствуют.</h1>
     <table th:if="${lastValue != null}" class="table table-bordered">
         <thead>
@@ -29,7 +30,10 @@
         </thead>
         <tbody>
         <tr>
-            <td class="center middle" th:each="data,rowStat : ${secondResult}" th:text="${data}"
+            <td class="center middle" th:if="${cacheable == true}" th:each="data,rowStat : ${secondResult}" th:text="${data}"
+                th:attr="id=${rowStat.index}">1
+            </td>
+            <td class="center middle" th:if="${cacheable == false}" th:each="data,rowStat : ${secondResult}" th:text="${data.temperature}"
                 th:attr="id=${rowStat.index}">1
             </td>
         </tr>

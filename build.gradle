@@ -33,7 +33,7 @@ dependencies {
         exclude module: "spring-boot-starter-tomcat"
     }
     compile "org.springframework.boot:spring-boot-starter-jetty"
-//    compile "org.springframework.boot:spring-boot-starter-security"
+    compile "org.springframework.boot:spring-boot-starter-security"
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
 //    compile 'org.springframework:spring-context-support:4.2.0.RELEASE'
 //    compile "org.springframework.boot:spring-boot-starter-remote-shell"
@@ -49,12 +49,9 @@ dependencies {
     runtime "org.webjars:flot:0.8.3"
     runtime "org.webjars.bower:katex-build:0.3.0"
 //    runtime "org.webjars:webpack:1.5.3"
-//    runtime 'org.webjars:ace:01.08.2014'
 //    runtime 'org.webjars:bootstrap:4.0.0-alpha'
-//    runtime 'org.webjars:cryptojs:3.1.2'
 //    runtime 'org.webjars:deployJava:20120801'
 //    runtime 'org.webjars:extjs:6.0.0'
-//    runtime 'org.webjars:metroui:2.0.23'
 
 //    runtime "org.liquibase:liquibase-core"
     runtime "org.hsqldb:hsqldb"
