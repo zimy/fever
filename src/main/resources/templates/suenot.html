@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org">
+  <head>
+    <title>Main</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=480"/>
+    <meta name="description" content="система электронного мониторинга температуры тела"/>
+    <meta name="keywords" content="система электронного мониторинга температуры тела wetrack"/>
+    <link rel="stylesheet" href="../static/app/app.min.css" th:attr="href=@{app/app.min.css}"/>
+  </head>
+  <body>
+    <main>
+      <!-- start header-->
+      <header class="header">
+        <div data-height="100%" data-width="100%" data-maxheight="100%" data-fit="cover" class="fotorama"><img src="../static/img/header.jpg" th:attr="src=@{img/header.jpg}"/></div>
+        <div class="fotorama__inner">
+          <div class="container">
+            <div>
+              <h1>Ther<b>Mom</b></h1>
+              <h2>система электронного мониторинга температуры тела</h2>
+              <p>Мы предлагаем новый метод измерения температуры тела. Этот термометр, который крепится на ручку ребёнка. Он может передавать данные на Ваш смартфон на разных платформах. С помощью приложения Вы будете в курсе о температуре ребёнка на всех этапах. Так же вся информация будет отображаться в виде графика. При повышении температуры будет приходить оповещение в виде звукового сигнала. <b>Нравится?</b></p>
+            </div>	
+            <form class="form-inline" action="/land" method="post">
+              <div class="form-group">
+                <input id="mail" name="mail" type="email" placeholder="Email" required="required" class="form-control form-control-lg"/>
+              </div>
+              <div class="form-group">
+                <input type="number" id="ticketId" name="ticketId" placeholder="Купон" class="form-control form-control-lg"/>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">Заказать</button>
+            </form>
+            <div data-counters="no" class="social-likes">
+              <div title="Поделиться ссылкой на Фейсбуке" class="facebook">Facebook</div>
+              <div title="Поделиться ссылкой в Твиттере" class="twitter">Twitter</div>
+              <div title="Поделиться ссылкой в Моём мире" class="mailru">Мой мир</div>
+              <div title="Поделиться ссылкой во Вконтакте" class="vkontakte">Вконтакте</div>
+              <div title="Поделиться ссылкой в Одноклассниках" class="odnoklassniki">Одноклассники</div>
+              <div title="Поделиться ссылкой в Гугл-плюсе" class="plusone">Google+</div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- end header-->
+    </main>
+    <script src="../static/app/app.min.js" th:attr="src=@{app/app.min.js}"></script>
+  </body>
+</html>
