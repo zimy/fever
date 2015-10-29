@@ -1,14 +1,20 @@
 fever:
   image: zimy/fever
   links:
-    - queue
+#    - queue
+    - mysql:mysql
   ports:
     - "80:8080"
-    - "22:2000"
-queue:
-  build: ./rabbit/.
-  ports:
-    - "1883:1883"
-    - "5672:5672"
-    - "15672:15672"
-
+#queue:
+#  build: ./rabbit/.
+#  ports:
+#    - "1883:1883"
+#    - "5672:5672"
+#    - "15672:15672"
+mysql:
+  image: mysql
+  environment:
+    - MYSQL_USER=feveruser
+    - MYSQL_PASSWORD=my-secret-pw
+    - MYSQL_DATABASE=fever
+    - MYSQL_ROOT_PASSWORD=rootpassword
