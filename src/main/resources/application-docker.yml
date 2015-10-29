@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: WeTrackPro - Thermo
   datasource:
     url: jdbc:mysql://${MYSQL_PORT_3306_TCP_ADDR}:${MYSQL_PORT_3306_TCP_PORT}/${MYSQL_ENV_MYSQL_DATABASE}
     username: ${MYSQL_ENV_MYSQL_USER}
@@ -16,12 +14,5 @@ spring:
   resources.cache-period: 86400
   http.encoding.charset: UTF-8
   thymeleaf.cache: true
-  mvc.favicon.enabled: false
-management.context-path: /management
 logging:
   path: /var/log/feverd/
-liquibase:
-  change-log: classpath:/db/changelog/db.changelog-master.yaml
-  check-change-log-location: false
-  enabled: false
-endpoints.shutdown.enabled: true

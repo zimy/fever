@@ -1,12 +1,9 @@
 spring:
-  profiles: openshift
-  application:
-    name: WeTrackPro - Thermo
   jpa:
     hibernate.ddl-auto: update
-  resources.cache-period: 3600
+  resources.cache-period: 86400
   http.encoding.charset: UTF-8
-  mvc.favicon.enabled: false
+  thymeleaf.cache: true
   datasource:
     url: jdbc:postgresql://${OPENSHIFT_POSTGRESQL_DB_HOST}:${OPENSHIFT_POSTGRESQL_DB_PORT}/feverd
     username: ${OPENSHIFT_POSTGRESQL_DB_USERNAME}
@@ -20,9 +17,3 @@ server:
     protocol_header: x-forwarded-proto
 logging:
   path: ${OPENSHIFT_DATA_DIR}/logs/
-management.context-path: /management
-liquibase:
-  change-log: classpath:/db/changelog/db.changelog-master.yaml
-  check-change-log-location: false
-  enabled: false
-endpoints.shutdown.enabled: true

@@ -13,14 +13,8 @@ spring:
   http.encoding.charset: UTF-8
   thymeleaf.cache: false
   mvc.favicon.enabled: false
-management.context-path: /management
 logging:
   path: /tmp/wetrackpro/
-liquibase:
-  change-log: classpath:/db/changelog/db.changelog-master.yaml
-  check-change-log-location: false
-  enabled: false
-endpoints.shutdown.enabled: true
 
 #security.user.name: user # login username
 #security.user.password: # login password
