@@ -2,9 +2,13 @@ spring:
   application:
     name: WeTrackPro - Thermo
   datasource:
-    url: jdbc:hsqldb:file:/tmp/wetrackpro/parker
+    url: jdbc:mysql://${MYSQL_PORT_3306_TCP_ADDR}:${MYSQL_PORT_3306_TCP_PORT}/${MYSQL_ENV_MYSQL_DATABASE}
+    username: ${MYSQL_ENV_MYSQL_USER}
+    password: ${MYSQL_ENV_MYSQL_PASSWORD}
+    driverClassName: com.mysql.jdbc.Driver
   jpa:
     hibernate.ddl-auto: update
+    hibernate.dialect: MySQL
     show-sql: false
   jackson.serialization:
     ORDER_MAP_ENTRIES_BY_KEYS: false
@@ -15,7 +19,7 @@ spring:
   mvc.favicon.enabled: false
 management.context-path: /management
 logging:
-  path: /tmp/wetrackpro/
+  path: /var/log/feverd/
 liquibase:
   change-log: classpath:/db/changelog/db.changelog-master.yaml
   check-change-log-location: false
