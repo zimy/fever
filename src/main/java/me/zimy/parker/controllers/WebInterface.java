@@ -46,6 +46,7 @@ public class WebInterface {
             parts.add(random.nextInt(18) + 20);
         }
         model.addAttribute("secondResult", parts);
+        model.addAttribute("amount", parts.size());
         model.addAttribute("lastValue", parts.get(parts.size() - 1));
         model.addAttribute("cacheable", true);
         return "answers";
@@ -59,6 +60,7 @@ public class WebInterface {
             parts.add(random.nextInt(18) + 20);
         }
         model.addAttribute("secondResult", parts);
+        model.addAttribute("amount", parts.size());
         model.addAttribute("lastValue", parts.get(parts.size() - 1));
         model.addAttribute("cacheable", false);
         return "suenot";
