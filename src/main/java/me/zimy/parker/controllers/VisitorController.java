@@ -42,14 +42,8 @@ public class VisitorController {
 
     @RequestMapping("/users")
     @ResponseBody
-    public List<User> userz(){
+    public List<User> userz() {
         return users.findAll();
-    }
-
-    @RequestMapping(value = "/land", method = RequestMethod.POST)
-    public String land(@RequestParam String mail, @RequestParam(required = false) Integer ticketId) {
-        users.save(new User(mail, ticketId));
-        return "thanks";
     }
 
     @RequestMapping("/stop/{distance}")
