@@ -40,6 +40,7 @@ public class WebInterface {
         if (all.size() != 0) {
             model.addAttribute("lastValue", all.get(all.size() - 1));
         }
+        model.addAttribute("amount", all.size());
         model.addAttribute("cacheable", false);
         return "answers";
     }
