@@ -6,16 +6,10 @@
     <meta charset="UTF-8"/>
     <title>График температуры</title>
     <link th:attr="href=@{/common.css}" href="../static/common.css" type="text/css" rel="stylesheet"/>
-    <link th:attr="href=@{webjars/katex-build/0.3.0/katex.min.css}"
-          rel="stylesheet" href="htts://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css" type="text/css"/>
     <script th:attr="src=@{webjars/jquery/2.1.1/jquery.min.js}"
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <script th:attr="src=@{webjars/flot/0.8.3/jquery.flot.min.js}"
             src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
-    <script th:attr="src=@{webjars/katex-build/0.3.0/katex.min.js}"
-            src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
-    <script th:attr="src=@{webjars/katex-build/0.3.0/contrib/auto-render.min.js}"
-            src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -23,23 +17,12 @@
             th:text="${cacheable ? lastValue : lastValue.temperature}"></span></h1>
 
     <h1 th:if="${lastValue == null}">Данные отсутствуют.</h1>
-    <table th:if="${lastValue != null}" class="table table-bordered">
-        <thead>
-        <tr class="center middle">
-            <th class="center middle" th:each="data,rowStat : ${secondResult}" th:text="${rowStat.index}">1</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="center middle" th:each="data,rowStat : ${secondResult}"
-                th:text="${cacheable ==true? data : data.temperature}"
-                th:attr="id=${rowStat.index}">1
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <div id="amount" style="dispay: none;" th:text="${amount}"></div>
 
+    <div style="display:none" th:each="data,rowStat : ${secondResult}"
+         th:text="${cacheable ==true? data : data.temperature}"
+         th:attr="id=${rowStat.index}">1
+    </div>
+    <div id="amount" style="dispay:none" th:text="${amount}"></div>
     <div id="graph" th:if="${lastValue != null}" style="width:100%;height:600px"></div>
     <script th:inline="javascript" type="text/javascript">
         // <![CDATA[
@@ -53,17 +36,6 @@
         });
         // ]]>
 
-
-
-
-
-    </script>
-    <script th:inline="javascript" type="text/javascript" th:remove="all">
-        // <![CDATA[
-        $(function () {
-	        katex.render("\\int_{-1337}^{777}\\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}", formula)
-        });
-        // ]]>
 
 
 
