@@ -2,7 +2,7 @@ spring:
   application:
     name: WeTrackPro - Thermo
   datasource:
-    url: jdbc:hsqldb:file:/tmp/wetrackpro/parker
+    url: jdbc:hsqldb:file:/var/lib/wetrack/fever
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
@@ -14,7 +14,7 @@ spring:
   thymeleaf.cache: false
   mvc.favicon.enabled: false
 logging:
-  path: /tmp/wetrackpro/
+  path: /var/log/wetrack/fever/
 
 #security.user.name: user # login username
 #security.user.password: # login password

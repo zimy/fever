@@ -1,11 +1,14 @@
 package me.zimy.parker.controllers;
 
 import me.zimy.parker.model.ThermoEvent;
+import me.zimy.parker.model.User;
 import me.zimy.parker.repositories.Thermos;
+import me.zimy.parker.repositories.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
@@ -24,6 +27,9 @@ public class WebInterface {
     @Autowired
     Thermos thermos;
 
+    @Autowired
+    Users users;
+
     @RequestMapping("/data")
     public String getProbabilityResults(
             @RequestParam(defaultValue = "false", required = false) Boolean cache,
@@ -34,6 +40,7 @@ public class WebInterface {
         if (all.size() != 0) {
             model.addAttribute("lastValue", all.get(all.size() - 1));
         }
+        model.addAttribute("amount", all.size());
         model.addAttribute("cacheable", false);
         return "answers";
     }
@@ -46,9 +53,16 @@ public class WebInterface {
             parts.add(random.nextInt(18) + 20);
         }
         model.addAttribute("secondResult", parts);
+        model.addAttribute("amount", parts.size());
         model.addAttribute("lastValue", parts.get(parts.size() - 1));
         model.addAttribute("cacheable", true);
         return "answers";
+    }
+
+    @RequestMapping(value = "/land", method = RequestMethod.POST)
+    public String land(@RequestParam String mail, @RequestParam(required = false) Integer ticketId) {
+        users.save(new User(mail, ticketId));
+        return "thanks";
     }
 
     @RequestMapping("/")
@@ -59,6 +73,7 @@ public class WebInterface {
             parts.add(random.nextInt(18) + 20);
         }
         model.addAttribute("secondResult", parts);
+        model.addAttribute("amount", parts.size());
         model.addAttribute("lastValue", parts.get(parts.size() - 1));
         model.addAttribute("cacheable", false);
         return "suenot";
