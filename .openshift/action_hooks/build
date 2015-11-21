@@ -2,7 +2,7 @@
 set -x
 cd $OPENSHIFT_REPO_DIR
 export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
-export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle/gradle-2.6
+export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle/gradle-2.8
 export PATH=$GRADLE_HOME/bin:$PATH
 export JAVA_HOME="$OPENSHIFT_DATA_DIR/jdk1.8.0_05"
 export PATH="$JAVA_HOME/bin:$PATH"
